@@ -11,9 +11,7 @@ public class GCD extends InputTwoNumbersClass {
     // Euclidean algorithm
     @Override
     protected int calculation(int n, int m) {
-        if(m==0){
-            return n;
-        }
-        return calculation(m,n%m);
+     //todo Euclidean algorithm
+        return 0;
     }
 }

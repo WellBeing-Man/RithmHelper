@@ -12,11 +12,8 @@ public class Factorial extends InputOneNumberClass {
 
     @Override
     protected int calculation(int n) {
-
-        if(n<=0){
-            return 1;
-        }
-        return n*calculation(n-1);
+        //todo recursive factorial
+        return 0;
     }
 
 
