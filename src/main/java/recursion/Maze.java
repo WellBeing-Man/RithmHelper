@@ -20,7 +20,7 @@ public class Maze {
 
 
     boolean findWay(int x, int y) {
-
+        //todo recursive maze
         return true;
     }
 
