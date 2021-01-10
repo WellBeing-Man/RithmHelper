@@ -1,36 +1,30 @@
 package recursion;
 
 
+import base.BooleanResult;
+import base.MapBaseProblem;
 
-public class Maze {
-
-    private int[][] map;
-    private int currentPositionX, currentPositionY;
+public class Maze extends MapBaseProblem implements BooleanResult {
 
     public Maze(int[][] n) {
         map=n;
     }
-
-    //Chaining method
-    Maze setCurrentPosition(int currentPositionX,int currentPositionY){
-        this.currentPositionX=currentPositionX;
-        this.currentPositionY=currentPositionY;
-        return this;
-    }
-
 
     boolean findWay(int x, int y) {
         //todo recursive maze
         return true;
     }
 
-    void printMap(){
-        for(int[] line : map){
-            for(int row : line){
-                System.out.print(row + " ");
-            }
-            System.out.println();
-        }
+    @Override
+    protected MapBaseProblem setCurrentPosition(int x, int y) {
+        currentPositionX=x;
+        currentPositionY=y;
+        return this;
+    }
+
+    @Override
+    public boolean calculate() {
+        return findWay(currentPositionX,currentPositionY);
     }
 
     private enum PATH{

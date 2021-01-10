@@ -8,10 +8,13 @@ public class GCD extends InputTwoNumbersClass {
         super(n, m);
     }
 
-    // Euclidean algorithm
     @Override
-    protected int calculation(int n, int m) {
-     //todo Euclidean algorithm
+    public int calculation() {
+        return gcd(n,m);
+    }
+
+    private int gcd(int n, int m) {
+        //todo Euclidean algorithm
         return 0;
     }
 }
