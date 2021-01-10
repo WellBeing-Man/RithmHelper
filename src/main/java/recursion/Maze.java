@@ -16,7 +16,7 @@ public class Maze extends MapBaseProblem implements BooleanResult {
     }
 
     @Override
-    protected MapBaseProblem setCurrentPosition(int x, int y) {
+    public Maze setCurrentPosition(int x, int y) {
         currentPositionX=x;
         currentPositionY=y;
         return this;
