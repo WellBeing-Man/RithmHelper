@@ -6,7 +6,7 @@ import base.MapBaseProblem;
 
 public class Maze extends MapBaseProblem implements BooleanResult {
 
-    private int max;
+
 
     public Maze(int[][] n) {
         map=n;

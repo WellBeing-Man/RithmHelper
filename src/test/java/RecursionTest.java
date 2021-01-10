@@ -1,4 +1,6 @@
+import base.MapBaseProblem;
 import org.junit.Test;
+import recursion.Blob;
 import recursion.Factorial;
 import recursion.GCD;
 import recursion.Maze;
@@ -70,4 +72,26 @@ public class RecursionTest {
 
     }
 
+
+    @Test
+    public void BlobTest() {
+
+        int[][] map={
+                {1,0,0,0,0,0,0,1},
+                {0,1,1,0,0,1,0,0},
+                {1,1,0,0,1,0,1,0},
+                {0,0,0,0,0,1,0,0},
+                {0,1,0,1,0,1,0,0},
+                {0,1,0,1,0,1,0,0},
+                {1,0,0,0,1,0,0,1},
+                {0,1,1,0,0,1,1,1},
+        };
+
+        Blob blob=new Blob(map);
+
+        assertEquals(blob.setCurrentPosition(0,0).calculation(),5);
+        assertEquals(blob.setCurrentPosition(7,7).calculation(),13);
+        assertEquals(blob.setCurrentPosition(6,0).calculation(),5);
+        assertEquals(blob.setCurrentPosition(0,7).calculation(),1);
+    }
 }
