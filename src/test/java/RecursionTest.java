@@ -1,6 +1,7 @@
 import org.junit.Test;
 import recursion.Factorial;
 import recursion.GCD;
+import recursion.Maze;
 
 import static org.junit.Assert.*;
 
@@ -41,14 +42,14 @@ public class RecursionTest {
 
 
         int[][] map2={
-                {1,1,1,1,1,1,1,1,1},
-                {1,0,1,0,1,0,1,0,1},
-                {1,0,0,0,0,1,0,0,1},
-                {1,0,1,1,0,1,0,1,1},
-                {1,0,1,0,0,1,0,0,4},
-                {1,0,1,1,0,1,0,1,1},
-                {1,0,0,0,1,1,0,1,1},
-                {1,1,1,1,1,1,1,1,1}
+                {0,1,0,1,0,1,0,1},
+                {0,0,0,0,1,0,0,1},
+                {0,1,1,0,1,0,1,1},
+                {0,1,0,0,1,0,0,4},
+                {0,1,1,0,1,0,1,1},
+                {0,1,1,0,1,0,1,1},
+                {0,1,1,0,1,0,1,1},
+                {0,0,0,0,0,0,1,1}
         };
 
         int[][] map3={
@@ -63,9 +64,9 @@ public class RecursionTest {
         };
 
 
-        assertEquals(new Maze(map1).setCurrentPosition(0,0).calculate(),true);
-        assertEquals(new Maze(map2).setCurrentPosition(1,1).calculate(),true);
-        assertEquals(new Maze(map3).setCurrentPosition(1,1).calculate(),false);
+        assertTrue(new Maze(map1).setCurrentPosition(0,0).explore());
+        assertTrue(new Maze(map2).setCurrentPosition(0,0).explore());
+        assertFalse(new Maze(map3).setCurrentPosition(1,1).explore());
 
     }
 
