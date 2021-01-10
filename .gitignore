@@ -133,7 +133,10 @@ hs_err_pid*
 # gradle build
 /.gradle
 
-#build
+# build
 /build
+
+# idea
+/.idea
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij
