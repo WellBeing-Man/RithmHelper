@@ -5,19 +5,24 @@ import base.MapBaseProblem;
 
 public class Blob extends MapBaseProblem implements IntResult {
 
+    public Blob(int[][] n) {
+        map=n;
+        max=n.length;
+    }
+
     @Override
     public int calculation() {
-        return countBlob(currentPositionX,currentPositionY,0);
+        return countBlob(currentPositionX,currentPositionY);
     }
 
     @Override
-    protected MapBaseProblem setCurrentPosition(int x, int y) {
+    public Blob setCurrentPosition(int x, int y) {
         currentPositionX=x;
         currentPositionY=y;
-        return null;
+        return this;
     }
 
-    private int countBlob(int x,int y, int count){
+    private int countBlob(int x,int y){
         //TODO recursive counting blob
         return 0;
     }

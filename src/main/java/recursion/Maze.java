@@ -27,8 +27,16 @@ public class Maze extends MapBaseProblem implements BooleanResult {
         return findWay(currentPositionX,currentPositionY);
     }
 
+    public boolean explore(){
+        printMap();
+        boolean result=calculate();
+        printMap();
+        return result;
+    }
+
+
     private enum PATH{
-        WAY(0),WALL(1),VISITED(3),BLOCKED(4);
+        WAY(0),WALL(1),VISITED(2),BLOCKED(3),EXIT(4);
 
         final private int tag;
 
