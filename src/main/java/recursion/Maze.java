@@ -1,27 +1,16 @@
 package recursion;
 
 
+import base.BooleanResult;
+import base.MapBaseProblem;
 
-public class Maze {
-
-    private int[][] map;
-    private int currentPositionX, currentPositionY;
-    private int max;
+public class Maze extends MapBaseProblem implements BooleanResult {
 
     public Maze(int[][] n) {
         map=n;
-        max =n.length;
     }
 
-    //Chaining method
-    public Maze setCurrentPosition(int currentPositionX,int currentPositionY){
-        this.currentPositionX=currentPositionX;
-        this.currentPositionY=currentPositionY;
-        return this;
-    }
-
-
-    private boolean findWay(int x, int y) {
+    boolean findWay(int x, int y) {
 
         if(x<0 || y<0 || x>= max || y>= max)
             return false;
@@ -39,43 +28,30 @@ public class Maze {
         }
     }
 
-    private void printMap(){
-        for(int[] line : map){
-            for(int row : line){
-                System.out.print(row + " ");
-            }
-            System.out.println();
-        }
-
-        System.out.println();
-        System.out.println();
+    @Override
+    public Maze setCurrentPosition(int x, int y) {
+        currentPositionX=x;
+        currentPositionY=y;
+        return this;
     }
 
-
-
-    public boolean explore(){
-        boolean result;
-        printMap();
-        result=findWay(currentPositionX,currentPositionY);
-        printMap();
-
-
-        return result;
+    @Override
+    public boolean calculate() {
+        return findWay(currentPositionX,currentPositionY);
     }
-
 
     private enum PATH{
-        WAY(0),WALL(1),VISITED(2),BLOCKED(3),EXIT(4);
+        WAY(0),WALL(1),VISITED(3),BLOCKED(4);
 
-        final private int TAG;
+        final private int tag;
 
         public int getTag() {
-            return TAG;
+            return tag;
         }
 
         PATH(int s) {
 
-            TAG =s;
+            tag=s;
         }
     }
 }

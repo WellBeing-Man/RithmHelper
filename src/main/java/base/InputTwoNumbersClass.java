@@ -1,6 +1,6 @@
 package base;
 
-abstract public class InputTwoNumbersClass {
+abstract public class InputTwoNumbersClass implements IntResult {
 
     protected int n;
     protected int m;
@@ -10,9 +10,9 @@ abstract public class InputTwoNumbersClass {
         this.m = m;
     }
 
-    protected abstract int calculation(int n,int m);
-
     public int value(){
-        return calculation(n,m);
+        return calculation();
     }
+
+
 }

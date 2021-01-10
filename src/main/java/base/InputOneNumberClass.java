@@ -1,6 +1,6 @@
 package base;
 
-abstract public class InputOneNumberClass {
+abstract public class InputOneNumberClass implements IntResult{
 
     protected int n;
 
@@ -8,9 +8,12 @@ abstract public class InputOneNumberClass {
         this.n = n;
     }
 
-    protected abstract int calculation(int n);
+
+
 
     public int value(){
-        return calculation(n);
+        return calculation();
     }
+
+
 }
