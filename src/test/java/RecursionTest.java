@@ -1,8 +1,5 @@
 import org.junit.Test;
-import recursion.Blob;
-import recursion.Factorial;
-import recursion.GCD;
-import recursion.Maze;
+import recursion.*;
 
 import static org.junit.Assert.*;
 
@@ -92,5 +89,45 @@ public class RecursionTest {
         assertEquals(blob.setCurrentPosition(7,7).calculation(),13);
         assertEquals(blob.setCurrentPosition(6,0).calculation(),5);
         assertEquals(blob.setCurrentPosition(0,7).calculation(),1);
+    }
+
+    @Test
+    public void NQueueTest(){
+        int[][] map={
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,1,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0}
+        };
+
+        int[][] map2={
+                {1,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,1,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0}
+        };
+
+        int[][] map3={
+                {0,0,0,0,0,0,1,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0},
+                {0,0,0,0,1,0,0,0}
+        };
+
+        assertTrue(new NQueue(map).setCurrentPosition(0,0).calculate());
+        assertFalse(new NQueue(map2).setCurrentPosition(0,0).calculate());
+        assertTrue(new NQueue(map3).setCurrentPosition(0,0).calculate());
     }
 }
