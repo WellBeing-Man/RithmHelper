@@ -17,29 +17,13 @@ public class NQueue extends ArrayBaseProblem implements BooleanResult {
     }
 
     private boolean nQueue(int level){
-        if(!promising(level-1)){
-            return false;
-        }else if(level==max){
-            printMap();
-            return true;
-        }
-            for(int i=1;i<=max;i++) {
-                array[level]=i;
-                if(nQueue(level+1)){
-                    return true;
-                }
-            }
+
+        //TODO Recursive nQueue
         return false;
     }
 
     private boolean promising(int level) {
-        for (int i = 0; i < level; i++) {
-            if (array[i] == array[level]) {
-                return false;
-            } else if (level-i ==Math.abs(array[level]-array[i])) {
-                return false;
-            }
-        }
+        //TODO implementing promising
             return true;
     }
 
