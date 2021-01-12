@@ -5,7 +5,8 @@ public class ArrayBaseProblem {
     protected int[] array;
     protected int max;
 
-    protected void printMap(){
+
+    protected void printArray(){
         for(Object a : array){
             System.out.print(a + " ");
         }
