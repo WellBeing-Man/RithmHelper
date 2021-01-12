@@ -94,41 +94,10 @@ public class RecursionTest {
 
     @Test
     public void NQueueTest(){
-        int[][] map={
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,1,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0}
-        };
 
-        int[][] map2={
-                {1,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,1,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0}
-        };
 
-        int[][] map3={
-                {0,0,0,0,0,0,1,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0},
-                {0,0,0,0,1,0,0,0}
-        };
-
-        assertTrue(new NQueue(map).setCurrentPosition(0,0).calculate());
-        assertFalse(new NQueue(map2).setCurrentPosition(0,0).calculate());
-        assertTrue(new NQueue(map3).setCurrentPosition(0,0).calculate());
+        assertTrue(new NQueue(5).calculate());
+        assertTrue(new NQueue(6).calculate());
+        assertTrue(new NQueue(8).calculate());
     }
 }

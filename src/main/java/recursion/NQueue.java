@@ -1,36 +1,46 @@
 package recursion;
 
+import base.ArrayBaseProblem;
 import base.BooleanResult;
 import base.MapBaseProblem;
 
-public class NQueue extends MapBaseProblem implements BooleanResult {
+public class NQueue extends ArrayBaseProblem implements BooleanResult {
 
-    public NQueue(int[][] n) {
-        map=n;
-    }
-
-    @Override
-    public NQueue setCurrentPosition(int x, int y) {
-        currentPositionX=x;
-        currentPositionY=y;
-        return this;
+    public NQueue(int n) {
+        array=new int[n];
+        max=n;
     }
 
     @Override
     public boolean calculate() {
-        return nQueue(currentPositionX,currentPositionY);
+        return nQueue(0);
     }
 
-    private boolean nQueue(int x,int y){
-        //TODO implement N-Queue problem
-        return true;
+    private boolean nQueue(int level){
+        if(!promising(level-1)){
+            return false;
+        }else if(level==max){
+            printMap();
+            return true;
+        }
+            for(int i=1;i<=max;i++) {
+                array[level]=i;
+                if(nQueue(level+1)){
+                    return true;
+                }
+            }
+        return false;
     }
 
-    public boolean explore(){
-        printMap();
-        boolean result=nQueue(currentPositionX,currentPositionY);
-        printMap();
-        return result;
+    private boolean promising(int level) {
+        for (int i = 0; i < level; i++) {
+            if (array[i] == array[level]) {
+                return false;
+            } else if (level-i ==Math.abs(array[level]-array[i])) {
+                return false;
+            }
+        }
+            return true;
     }
 
 }
