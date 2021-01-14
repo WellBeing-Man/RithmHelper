@@ -100,4 +100,15 @@ public class RecursionTest {
         assertTrue(new NQueue(6).calculate());
         assertTrue(new NQueue(8).calculate());
     }
+
+    @Test
+    public void PowerSetTest(){
+       assertEquals(new PowerSet(new int[]{1, 2, 3}).calculation(),9);
+       assertEquals(new PowerSet(new int[]{1, 2, 3,4}).calculation(),17);
+       assertEquals(new PowerSet(new int[]{1, 2, 3,4,5}).calculation(),33);
+       assertEquals(new PowerSet(new int[]{1, 2, 3,4,5,6}).calculation(),65);
+       assertEquals(new PowerSet(new int[]{1, 2, 3,4,5,6,7}).calculation(),129);
+
+
+    }
 }
