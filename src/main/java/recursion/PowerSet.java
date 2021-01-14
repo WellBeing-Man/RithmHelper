@@ -23,20 +23,7 @@ public class PowerSet extends ArrayBaseProblem implements IntResult {
     }
 
     private void pSet(int k) {
-        if(k==max){
-            for(int i=0;i<max;i++){
-                if(include[i])
-                    System.out.print(array[i]+ " ");
-            }
-            System.out.println();
-            count++;
-            return;
-        }
-
-        include[k]=false;
-        pSet(k+1);
-        include[k]=true;
-        pSet(k+1);
+        //TODO Recursive PowerSet
     }
 
 
