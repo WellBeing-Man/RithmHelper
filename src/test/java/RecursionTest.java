@@ -1,5 +1,6 @@
 import org.junit.Test;
 import recursion.*;
+import sorting.SelectionSort;
 
 import static org.junit.Assert.*;
 
