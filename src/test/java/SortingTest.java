@@ -9,7 +9,18 @@ public class SortingTest {
         int[] before={5,1,2,4,3};
         int[] after={1,2,3,4,5};
 
-        assertEquals(new SelectionSort(before).sort(),after);
+        assertEquals(arrayToString(new SelectionSort(before).sort()),arrayToString(after));
+    }
+
+    String arrayToString(int[] array){
+        String result="";
+
+        for (int a:array
+             ) {
+            result+=String.valueOf(a);
+        }
+
+        return result;
     }
 
 }
