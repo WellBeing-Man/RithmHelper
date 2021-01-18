@@ -8,8 +8,22 @@ public class InsertionSort extends Sort {
 
     @Override
     public int[] sort() {
-        //TODO Insertion Sort
-        return new int[0];
+        return insertionSort(array);
     }
 
+
+    private int[] insertionSort(int[] array){
+
+        for(int i=max-1;i>0;i--){
+
+            int j=i;
+            while (array[j]<array[j-1]){
+                array[j]=array[j-1];
+                j--;
+            }
+            array[j]=array[i];
+        }
+
+     return array;
+    }
 }
