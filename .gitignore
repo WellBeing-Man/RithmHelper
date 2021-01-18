@@ -149,3 +149,8 @@ rebel.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij
 /build/
+/build/classes/
+/build/tmp/
+/build/generated/
+/build/reports/
+/build/test-results/
