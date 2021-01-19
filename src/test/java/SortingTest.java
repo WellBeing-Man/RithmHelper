@@ -41,6 +41,7 @@ public class SortingTest {
             assertEquals(arrayToString(new InsertionSort(input.get(i)).sort()),arrayToString(output.get(i)));
             assertEquals(arrayToString(new MergeSort(input.get(i)).sort()),arrayToString(output.get(i)));
             assertEquals(arrayToString(new QuickSort(input.get(i)).sort()),arrayToString(output.get(i)));
+            assertEquals(arrayToString(new HeapSort(input.get(i)).sort()),arrayToString(output.get(i)));
         }
 
     }

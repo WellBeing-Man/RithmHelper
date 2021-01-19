@@ -14,16 +14,15 @@ public class InsertionSort extends Sort {
 
     private int[] insertionSort(int[] array){
 
-        for(int i=max-1;i>0;i--){
-
-            int j=i;
-            while (array[j]<array[j-1]){
-                array[j]=array[j-1];
-                j--;
+        for (int i = 1; i < max; i++) {
+            int temp = array[i];
+                for (int j = i - 1; j >= 0; j--) {
+                    if (temp < array[j]) {
+                        array[j + 1] = array[j];
+                        array[j] = temp;
+                    }
+                }
             }
-            array[j]=array[i];
-        }
-
      return array;
     }
 }

@@ -28,21 +28,25 @@ public class MergeSort extends Sort {
             int[] temp=new int[max];
             int i=p;
             int j=q+1;
-            while (i<=q || j<=r){
+            int k=p;
+            while (i<=q && j<=r){
                 if(array[i]<array[j]){
-                    temp[i]=array[i++];
+                    temp[k++]=array[i++];
                 }else {
-                    temp[j]=array[j++];
+                    temp[k++]=array[j++];
                 }
             }
 
-            while (i<q){
-                temp[i]=array[i++];
+            while (i<=q){
+                temp[k++]=array[i++];
             }
-            while (j<r){
-                temp[j]=array[j];
+            while (j<=r){
+                temp[k++]=array[j++];
             }
 
-            array=Arrays.copyOf(temp,max);
+        for (int l = p; l <= r; l++) {
+            array[l]=temp[l];
+        }
+
     }
 }
