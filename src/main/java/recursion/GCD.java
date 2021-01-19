@@ -13,8 +13,10 @@ public class GCD extends InputTwoNumbersClass {
         return gcd(n,m);
     }
 
-    private int gcd(int n, int m) {
-        //todo Euclidean algorithm
-        return 0;
+    private int gcd(int a, int b) {
+        if(b<=0){
+            return a;
+        }
+        return gcd(b,a%b);
     }
 }

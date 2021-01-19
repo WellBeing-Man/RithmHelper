@@ -8,8 +8,18 @@ public class BubbleSort extends Sort {
 
     @Override
     public int[] sort() {
-        //TODO Bubble Sort
-        return new int[0];
+        return bubbleSort(array);
     }
 
+
+    private int[] bubbleSort(int[] a){
+        for(int i=0;i<max-1;i++){
+            if(a[i]>a[i+1]){
+                int temp=a[i];
+                a[i]=a[i+1];
+                a[i+1]=temp;
+            }
+        }
+        return a;
+    }
 }

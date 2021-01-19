@@ -13,6 +13,23 @@ public class Maze extends MapBaseProblem implements BooleanResult {
         max=n.length;
     }
 
+    boolean findWay(int x, int y) {
+
+        if(x<0 || y<0 || x>= max || y>= max)
+            return false;
+        else if(map[x][y] == PATH.EXIT.getTag()) {
+            return true;
+        }else if(map[x][y] != PATH.WAY.getTag()){
+            return false;
+        }else{
+            map[x][y] = PATH.VISITED.getTag();
+            if(findWay(x+1,y) || findWay(x-1,y) || findWay(x,y+1)|| findWay(x,y-1)) {
+                return true;
+            }
+            map[x][y]=PATH.BLOCKED.getTag();
+            return false;
+        }
+    }
 
     @Override
     public Maze setCurrentPosition(int x, int y) {
@@ -23,8 +40,7 @@ public class Maze extends MapBaseProblem implements BooleanResult {
 
     @Override
     public boolean calculate() {
-        // TODO recursive Maze
-        return false;
+        return findWay(currentPositionX,currentPositionY);
     }
 
     public boolean explore(){

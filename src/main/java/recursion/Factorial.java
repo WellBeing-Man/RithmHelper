@@ -2,7 +2,6 @@ package recursion;
 
 import base.InputOneNumberClass;
 
-
 public class Factorial extends InputOneNumberClass {
 
 
@@ -10,15 +9,15 @@ public class Factorial extends InputOneNumberClass {
         super(n);
     }
 
+
     @Override
     public int calculation() {
         return factorial(n);
     }
 
     private int factorial(int n) {
-        //TODO recursive factorial
-        return 0;
+        if(n==0)
+            return 1;
+        return n*factorial(n-1);
     }
-
-
 }
