@@ -1,5 +1,7 @@
 import org.junit.Test;
 import sorting.*;
+import sorting.heap.HeapSort;
+import sorting.heap.MaxHeap;
 
 import java.util.ArrayList;
 
@@ -44,6 +46,22 @@ public class SortingTest {
             assertEquals(arrayToString(new HeapSort(input.get(i)).sort()),arrayToString(output.get(i)));
         }
 
+    }
+
+    @Test
+    public void MaxHeapTest(){
+        MaxHeap heap=new MaxHeap();
+        heap.insert(1);
+        heap.insert(2);
+        heap.insert(3);
+        heap.insert(4);
+        heap.insert(5);
+
+        heap.printHeap();
+
+        heap.pop();
+        heap.pop();
+        heap.printHeap();
     }
 
 
