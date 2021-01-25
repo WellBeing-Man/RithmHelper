@@ -15,13 +15,13 @@ public class BinarySearchTree  extends Tree<BinaryTreeNode> {
     }
 
     @Override
-    public BinaryTreeNode insert() {
+    public BinaryTreeNode insert(int input) {
         //todo implement insert
         return null;
     }
 
     @Override
-    public BinaryTreeNode delete() {
+    public BinaryTreeNode delete(int input) {
         //todo implement delete
         return null;
     }
