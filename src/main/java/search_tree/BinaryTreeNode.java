@@ -2,26 +2,26 @@ package search_tree;
 
 class BinaryTreeNode extends TreeNode{
 
-    BinarySearchTree left;
-    BinarySearchTree right;
+    BinaryTreeNode left;
+    BinaryTreeNode right;
 
     public BinaryTreeNode(int data) {
         super(data);
     }
 
-    public void setLeft(BinarySearchTree left) {
+    public void setLeft(BinaryTreeNode left) {
         this.left = left;
     }
 
-    public void setRight(BinarySearchTree right) {
+    public void setRight(BinaryTreeNode right) {
         this.right = right;
     }
 
-    public BinarySearchTree getLeft() {
+    public BinaryTreeNode getLeft() {
         return left;
     }
 
-    public BinarySearchTree getRight() {
+    public BinaryTreeNode getRight() {
         return right;
     }
 
