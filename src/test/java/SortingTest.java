@@ -65,6 +65,40 @@ public class SortingTest {
         heap.printHeap();
     }
 
+    @Test
+    public void CountingSort() {
+
+        ArrayList<int[]> input = new ArrayList<>();
+        ArrayList<int[]> output = new ArrayList<>();
+
+        input.add(new int[]{5, 3, 4, 5, 1, 0, 4, 1, 3, 0, 2, 4, 2, 2, 3, 0});
+        output.add(new int[]{0, 0, 0, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5});
+
+        input.add(new int[] {15,13,14,0,1,2,4,9,8,10,8,9,0,12,2,1,2,0,1,3,4,0,11});
+        output.add(new int[]{0,0,0,0,1,1,1,2,2,2,3,4,4,8,8,9,9,10,11,12,13,14,15});
+
+
+        for (int i = 0; i < input.size(); i++) {
+            assertEquals(arrayToString(new CountingSort(input.get(i)).sort()), arrayToString(output.get(i)));
+
+        }
+
+    }
+
+    @Test
+    public void radixSortTest(){
+        ArrayList<int[]> input = new ArrayList<>();
+        ArrayList<int[]> output = new ArrayList<>();
+
+        input.add(new int[] {125,383,274,96,0,9,81,72});
+        output.add(new int[]{0,9,72,81,96,125,274,383});
+
+        for (int i = 0; i < input.size(); i++) {
+            assertEquals(arrayToString(new RadixSort(input.get(i)).setDigits(3).sort()), arrayToString(output.get(i)));
+
+        }
+    }
+
 
 
     String arrayToString(int[] array){
@@ -72,7 +106,7 @@ public class SortingTest {
 
         for (int a:array
              ) {
-            result+=String.valueOf(a);
+            result+=a+" ";
         }
 
         return result;
