@@ -1,7 +1,7 @@
 package search_tree;
 
 public interface SearchStructure<T> {
-    boolean search(T input);
+    boolean search(int input);
     T insert();
     T delete();
 }

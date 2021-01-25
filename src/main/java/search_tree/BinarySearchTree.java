@@ -2,14 +2,14 @@ package search_tree;
 
 public class BinarySearchTree  extends Tree<BinaryTreeNode> {
 
-    public BinarySearchTree(String rootData) {
+    public BinarySearchTree(int rootData) {
         super(rootData);
         root=new BinaryTreeNode(rootData);
         size++;
     }
 
     @Override
-    public boolean search(TreeNode input) {
+    public boolean search(int input) {
         //todo implement search
         return false;
     }

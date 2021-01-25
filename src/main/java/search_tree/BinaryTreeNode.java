@@ -5,7 +5,7 @@ class BinaryTreeNode extends TreeNode{
     BinarySearchTree left;
     BinarySearchTree right;
 
-    public BinaryTreeNode(String data) {
+    public BinaryTreeNode(int data) {
         super(data);
     }
 
