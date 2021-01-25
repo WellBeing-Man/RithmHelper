@@ -5,6 +5,6 @@ abstract public class Tree<T> implements SearchStructure<TreeNode> {
     protected TreeNode root;
     protected int size;
 
-    public Tree(String rootData) {
+    public Tree(int rootData) {
     }
 }
