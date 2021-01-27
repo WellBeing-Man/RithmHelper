@@ -2,7 +2,7 @@ package search_tree;
 
 import base.TreeNode;
 
-public class RedBlackTree extends Tree<BinaryTreeNode> {
+public class RedBlackTree extends Tree<RedBlackTreeNode> {
 
     //TODO implement RedBlack-Tree
 
@@ -11,17 +11,18 @@ public class RedBlackTree extends Tree<BinaryTreeNode> {
     }
 
     @Override
-    public TreeNode search(int input) {
+    public RedBlackTreeNode search(int input) {
         return null;
     }
 
     @Override
-    public TreeNode insert(int T) {
+    public RedBlackTreeNode insert(int T) {
         return null;
     }
 
     @Override
-    public boolean delete(int input) {
-        return false;
+    public TreeNode delete(TreeNode input) {
+        return null;
     }
+
 }
