@@ -1,6 +1,9 @@
 package search_tree;
 
-abstract public class Tree<T> implements SearchStructure<TreeNode> {
+import base.DynamicSet;
+import base.TreeNode;
+
+abstract public class Tree<T> implements DynamicSet<TreeNode> {
 
     protected TreeNode root;
     protected int size;

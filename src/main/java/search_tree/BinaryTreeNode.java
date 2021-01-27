@@ -1,27 +1,39 @@
 package search_tree;
 
-class BinaryTreeNode extends TreeNode{
+import base.TreeNode;
 
-    BinarySearchTree left;
-    BinarySearchTree right;
+class BinaryTreeNode extends TreeNode {
+
+    BinaryTreeNode left;
+    BinaryTreeNode right;
+    BinaryTreeNode parent;
 
     public BinaryTreeNode(int data) {
         super(data);
     }
 
-    public void setLeft(BinarySearchTree left) {
+
+    public BinaryTreeNode getParent() {
+        return parent;
+    }
+
+    public void setParent(BinaryTreeNode parent) {
+        this.parent = parent;
+    }
+
+    public void setLeft(BinaryTreeNode left) {
         this.left = left;
     }
 
-    public void setRight(BinarySearchTree right) {
+    public void setRight(BinaryTreeNode right) {
         this.right = right;
     }
 
-    public BinarySearchTree getLeft() {
+    public BinaryTreeNode getLeft() {
         return left;
     }
 
-    public BinarySearchTree getRight() {
+    public BinaryTreeNode getRight() {
         return right;
     }
 

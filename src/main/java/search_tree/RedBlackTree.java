@@ -2,14 +2,13 @@ package search_tree;
 
 import base.TreeNode;
 
-public class BinarySearchTree extends Tree<BinaryTreeNode> {
+public class RedBlackTree extends Tree<BinaryTreeNode> {
 
-    public BinarySearchTree(int rootData) {
+    //TODO implement RedBlack-Tree
+
+    public RedBlackTree(int rootData) {
         super(rootData);
-        root=new BinaryTreeNode(rootData);
-        size++;
     }
-
 
     @Override
     public TreeNode search(int input) {
