@@ -1,6 +1,6 @@
-package search_tree;
+package base;
 
-abstract class TreeNode {
+public abstract class TreeNode {
     int data;
 
     public TreeNode(int data) {
