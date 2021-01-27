@@ -21,7 +21,7 @@ public class CustomHash implements DynamicSet<Object> {
     }
 
     @Override
-    public boolean delete(int input) {
+    public Object delete(Object input) {
         return false;
     }
 }
