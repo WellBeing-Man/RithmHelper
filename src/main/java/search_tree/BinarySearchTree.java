@@ -2,12 +2,15 @@ package search_tree;
 
 import base.TreeNode;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree extends Tree<BinaryTreeNode> {
 
-    public BinarySearchTree(int rootData) {
-        super(rootData);
-        root=new BinaryTreeNode(rootData);
-        size++;
+    private ArrayList<Integer> traversalResult;
+
+    public BinarySearchTree() {
+        super();
+        traversalResult=new ArrayList<>();
     }
 
 
@@ -23,10 +26,29 @@ public class BinarySearchTree extends Tree<BinaryTreeNode> {
         return null;
     }
 
+    public TreeNode delete(int data){
+        return delete(search(data));
+    }
+
     @Override
     public TreeNode delete(TreeNode input) {
         return null;
     }
 
 
+
+    public ArrayList<Integer> inOrderTraversal(){
+        traversalResult=new ArrayList<>();
+        inOrderTraversal((BinaryTreeNode)root);
+
+        return traversalResult;
+    }
+
+    private void inOrderTraversal(BinaryTreeNode node){
+        if(node!=null){
+            traversalResult.add(node.getData());
+            inOrderTraversal(node.getLeft());
+            inOrderTraversal(node.getRight());
+        }
+    }
 }

@@ -6,6 +6,13 @@ public class RadixSort extends Sort {
         super(array);
     }
 
+    private int digits=0;
+
+    public RadixSort setDigits(int digits) {
+        this.digits = digits;
+        return this;
+    }
+
     @Override
     public int[] sort() {
          //TODO Radix Sort
