@@ -2,7 +2,7 @@ package search_tree;
 
 import base.TreeNode;
 
-class BinaryTreeNode extends TreeNode {
+public class BinaryTreeNode extends TreeNode {
 
     BinaryTreeNode left;
     BinaryTreeNode right;
@@ -36,5 +36,7 @@ class BinaryTreeNode extends TreeNode {
     public BinaryTreeNode getRight() {
         return right;
     }
+
+
 
 }

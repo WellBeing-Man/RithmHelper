@@ -38,13 +38,13 @@ public class SortingTest {
         output.add(afterCase3);
 
         for (int i = 0; i < input.size(); i++) {
-            assertEquals(arrayToString(new SelectionSort(input.get(i)).sort()),arrayToString(output.get(i)));
-            assertEquals(arrayToString(new BubbleSort(input.get(i)).sort()),arrayToString(output.get(i)));
-            assertEquals(arrayToString(new InsertionSort(input.get(i)).sort()),arrayToString(output.get(i)));
-            assertEquals(arrayToString(new MergeSort(input.get(i)).sort()),arrayToString(output.get(i)));
-            assertEquals(arrayToString(new QuickSort(input.get(i)).sort()),arrayToString(output.get(i)));
-            assertEquals(arrayToString(new HeapSort(input.get(i)).sort()),arrayToString(output.get(i)));
-            assertEquals(arrayToString(new CountingSort(input.get(i)).sort()),arrayToString(output.get(i)));
+            assertEquals(TestUtils.arrayToString(new SelectionSort(input.get(i)).sort()),TestUtils.arrayToString(output.get(i)));
+            assertEquals(TestUtils.arrayToString(new BubbleSort(input.get(i)).sort()),TestUtils.arrayToString(output.get(i)));
+            assertEquals(TestUtils.arrayToString(new InsertionSort(input.get(i)).sort()),TestUtils.arrayToString(output.get(i)));
+            assertEquals(TestUtils.arrayToString(new MergeSort(input.get(i)).sort()),TestUtils.arrayToString(output.get(i)));
+            assertEquals(TestUtils.arrayToString(new QuickSort(input.get(i)).sort()),TestUtils.arrayToString(output.get(i)));
+            assertEquals(TestUtils.arrayToString(new HeapSort(input.get(i)).sort()),TestUtils.arrayToString(output.get(i)));
+            assertEquals(TestUtils.arrayToString(new CountingSort(input.get(i)).sort()),TestUtils.arrayToString(output.get(i)));
         }
 
     }
@@ -79,7 +79,7 @@ public class SortingTest {
 
 
         for (int i = 0; i < input.size(); i++) {
-            assertEquals(arrayToString(new CountingSort(input.get(i)).sort()), arrayToString(output.get(i)));
+            assertEquals(TestUtils.arrayToString(new CountingSort(input.get(i)).sort()), TestUtils.arrayToString(output.get(i)));
 
         }
 
@@ -94,22 +94,11 @@ public class SortingTest {
         output.add(new int[]{0,9,72,81,96,125,274,383});
 
         for (int i = 0; i < input.size(); i++) {
-            assertEquals(arrayToString(new RadixSort(input.get(i)).setDigits(3).sort()), arrayToString(output.get(i)));
+            assertEquals(TestUtils.arrayToString(new RadixSort(input.get(i)).setDigits(3).sort()), TestUtils.arrayToString(output.get(i)));
 
         }
     }
 
 
-
-    String arrayToString(int[] array){
-        String result="";
-
-        for (int a:array
-             ) {
-            result+=a+" ";
-        }
-
-        return result;
-    }
 
 }

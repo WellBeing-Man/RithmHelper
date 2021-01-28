@@ -6,8 +6,8 @@ public class RedBlackTree extends Tree<RedBlackTreeNode> {
 
     //TODO implement RedBlack-Tree
 
-    public RedBlackTree(int rootData) {
-        super(rootData);
+    public RedBlackTree() {
+        super();
     }
 
     @Override

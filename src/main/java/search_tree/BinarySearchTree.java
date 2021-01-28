@@ -2,33 +2,39 @@ package search_tree;
 
 import base.TreeNode;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree extends Tree<BinaryTreeNode> {
 
-    public BinarySearchTree(int rootData) {
-        super(rootData);
+    private ArrayList<Integer> traversalResult;
+
+    public BinarySearchTree() {
+        super();
+        traversalResult=new ArrayList<>();
     }
 
 
+
     @Override
-    public TreeNode search(int input) {
+    public BinaryTreeNode search(int input) {
         BinaryTreeNode node=(BinaryTreeNode) root;
 
         while (node.getData()!=input){
-            if(node.getData()>input){
+            if(node.getData()<input){
                 node=node.getRight();
-            }else {
+            }else if(node.getData()>input){
                 node=node.getLeft();
+            }
+            if(node==null){
+                break;
             }
         }
 
-        if(node.getData()!=input){
-            return null;
-        }
-        return node;
+       return node;
     }
 
     @Override
-    public TreeNode insert(int T) {
+    public BinaryTreeNode insert(int T) {
 
 
         BinaryTreeNode node=(BinaryTreeNode) root;
@@ -36,11 +42,12 @@ public class BinarySearchTree extends Tree<BinaryTreeNode> {
         BinaryTreeNode parent=null;
         if(root==null){
             root=newNode;
+            return newNode;
         }
 
         while (node!=null){
             parent=node;
-            if(node.getData()>T){
+            if(node.getData()<T){
                     node=node.getRight();
             }else {
                 node=node.getLeft();
@@ -55,14 +62,46 @@ public class BinarySearchTree extends Tree<BinaryTreeNode> {
 
         newNode.parent=parent;
 
+        size++;
         return newNode;
     }
 
-    @Override
-    public boolean delete(int input) {
-        return false;
+
+
+    public TreeNode delete(int data){
+        return delete(search(data));
     }
 
+    @Override
+    public TreeNode delete(TreeNode input) {
+        BinaryTreeNode node=(BinaryTreeNode)input;
+        if(node.getRight() == null && node.getLeft() == null) {
+            if(node.getParent().getLeft()==node){
+                node.getParent().setLeft(null);
+            }else{
+                node.getParent().setRight(null);
+            }
+        }else if(node.getRight() == null){
+             node=node.getLeft();
+        }else if(node.getLeft()==null){
+               node=node.getRight();
+        }else {
+            BinaryTreeNode successor = findSuccessor(node);
+            node.setData(successor.getData());
+
+            if (successor.getRight() == null) {
+                if(successor.getParent().getRight()==successor){
+                    successor.getParent().setRight(null);
+                }else{
+                    successor.getParent().setLeft(null);
+                }
+            } else{
+                successor = successor.getRight();
+            }
+        }
+
+        return node;
+    }
 
 
     private BinaryTreeNode findSuccessor(BinaryTreeNode node){
@@ -88,5 +127,21 @@ public class BinarySearchTree extends Tree<BinaryTreeNode> {
         }
 
         return node.getRight();
+    }
+
+
+    public ArrayList<Integer> inOrderTraversal(){
+        traversalResult=new ArrayList<>();
+        inOrderTraversal((BinaryTreeNode)root);
+
+        return traversalResult;
+    }
+
+    private void inOrderTraversal(BinaryTreeNode node){
+        if(node!=null){
+            traversalResult.add(node.getData());
+            inOrderTraversal(node.getLeft());
+            inOrderTraversal(node.getRight());
+        }
     }
 }
